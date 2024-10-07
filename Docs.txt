@@ -1,0 +1,31 @@
+
+CreateMeny(MenyOptions,MenyName="",ReturnINT=False,ClearOnExit=True)
+
+    MenyOptions: List of strings that will be displayed in the menu. REQUIRED
+    MenyName: Name of the menu, will be displayed at the top of the menu. Optional
+    ReturnINT: If true, returns the index of the selected option. Default: False
+    ClearOnExit: Clears the terminal on exit. Default: True
+
+    Returns the string of the menu option that was selected unless ReturnINT is true.
+
+
+CreateLoadingBar(LoadingBarName="")
+
+    Creates a loading bar specified by LoadingBarName with completionrate of 0.
+
+
+RemoveLoadingBar(LoadingBarName="")
+
+    Removes a loading bar specified by LoadingBarName.
+
+RemoveAllLoadingBars()
+
+    Removes ALL loading bars.
+
+LoopUpdate()
+
+    Put this in a loop and it will count how many times the loop as been run.
+
+ResetLoopUpdate()
+
+    Resets LoopUpdate.
