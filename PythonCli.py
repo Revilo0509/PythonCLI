@@ -1,11 +1,9 @@
 import keyboard
 import time
 
-def ListLookUp(List, Thing):
-    for i in range(len(List)):
-        if List[i] == Thing:
-            return i
-    raise SyntaxError("The variable " + str(Thing) + " is not in the list " + str(List))
+def ListLookUp(List, Item):
+    return List.index(Item)
+    raise SyntaxError("The variable " + str(Item) + " is not in the list " + str(List))
 
 # Clear the console
 def cls():
