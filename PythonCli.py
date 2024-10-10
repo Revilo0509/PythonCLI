@@ -1,10 +1,6 @@
 import keyboard
 import time
 
-def ListLookUp(List, Item):
-    return List.index(Item)
-    raise SyntaxError("The variable " + str(Item) + " is not in the list " + str(List))
-
 # Clear the console
 def cls():
     print("\033[H\033[J", end="")
@@ -80,7 +76,7 @@ def UpdateLoadingBar(LoadingBarName="", CompletionPercentage=0):
         else:
             raise SyntaxError("LoadingBarName must be specified")
 
-    LoadingBarIndex = ListLookUp(LoadingBarNameList, LoadingBarName)
+    LoadingBarIndex = LoadingBarNameList.index(LoadingBarName)
     LoadingBarPercentageList[LoadingBarIndex] = CompletionPercentage
 
     cls()
@@ -94,7 +90,7 @@ def RemoveLoadingBar(LoadingBarName=""):
     if LoadingBarName == "":
         raise SyntaxError("LoadingBarName must be specified")
     
-    LoadingBarIndex = ListLookUp(LoadingBarNameList, LoadingBarName)
+    LoadingBarIndex = LoadingBarNameList.index(LoadingBarName)
     LoadingBarNameList.pop(LoadingBarIndex)
     LoadingBarPercentageList.pop(LoadingBarIndex)
 
