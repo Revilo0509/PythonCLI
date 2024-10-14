@@ -5,7 +5,7 @@ import time
 def cls():
     print("\033[H\033[J", end="")
 
-def CreateMeny(MenyOptions,MenyName="",ReturnINT=False,ClearOnExit=True):
+def CreateMenu(MenyOptions,MenyName="",ReturnINT=False,ClearOnExit=True):
 
     # Validates the input variables
     if type(MenyOptions) != list:
