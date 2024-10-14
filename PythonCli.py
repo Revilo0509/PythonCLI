@@ -5,7 +5,7 @@ import time
 def cls():
     print("\033[H\033[J", end="")
 
-def CreateMenu(MenyOptions,MenyName="",ReturnINT=False,ClearOnExit=True):
+def CreateMenu(MenyOptions, MenyName="", WrapAround = False, ReturnINT=False, ClearOnExit=True):
 
     # Validates the input variables
     if type(MenyOptions) != list:
@@ -23,11 +23,15 @@ def CreateMenu(MenyOptions,MenyName="",ReturnINT=False,ClearOnExit=True):
             Update = True
             if CurrentlySelected < len(MenyOptions) - 1:
                 CurrentlySelected += 1
+            elif WrapAround == True:
+                CurrentlySelected = 0
 
         if keyboard.is_pressed('up') and not Update:
             Update = True
             if CurrentlySelected > 0:
                 CurrentlySelected -= 1
+            elif WrapAround == True:
+                CurrentlySelected = len(MenyOptions) - 1
 
         if keyboard.is_pressed('enter') and not Update:
             if ClearOnExit:
